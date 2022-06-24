@@ -1,0 +1,17 @@
+<ng-container *ngIf="items$ | async as result" [ngSwitch]="result.state">
+  <ng-container *ngSwitchCase="dataStateTypeEnum.LOADING">
+    <h3>Loading Items...</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateTypeEnum.ERROR">
+    <h3>Fetching Items Error!</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateTypeEnum.SUCCESS">
+    <tr *ngFor="let item of result.data" >
+      <ng-container *ngIf="item.available">
+        <th>{{item.id}}</th>
+        <td>{{item.title}}</td>
+        <td>{{item.description}}</td>
+      </ng-container>
+    </tr>
+  </ng-container>
+</ng-container>

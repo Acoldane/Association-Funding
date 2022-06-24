@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Hanane",
+      "description": "hsfdhchfsjdjkvskdfkvlksdf",
+      "available": true
+    },
+    {
+      "id": 2,
+      "title": "banane",
+      "description": "hsfdhchfsjdjkvskdfkvlksdf fvjqsdkvlqdflkflkdqlkdflkqdkkf",
+      "available": false
+    }
+  ]
+}
