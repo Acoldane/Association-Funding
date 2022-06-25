@@ -1,44 +1,44 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Item} from '../models/item.model';
+import {Asso} from '../models/asso.model';
 import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ItemService {
+export class AssoService {
 
-  readonly URI: string = 'http://localhost:3000/items';
+  readonly URI: string = 'http://localhost:3000/Assos';
 
   constructor(private httpClient: HttpClient) {
   }
 
 
-  getAll(): Observable<Item[]> {
-    return this.httpClient.get<Item[]>(this.URI);
+  getAll(): Observable<Asso[]> {
+    return this.httpClient.get<Asso[]>(this.URI);
   }
 
-  getItemById(id: any): Observable<Item>{
-    return this.httpClient.get<Item>(this.URI + '/' + id);
+  getAssoById(id: any): Observable<Asso>{
+    return this.httpClient.get<Asso>(this.URI + '/' + id);
   }
 
-  create(data: Item): Observable<Item> {
-    return this.httpClient.post<Item>(this.URI, data);
+  create(data: Asso): Observable<Asso> {
+    return this.httpClient.post<Asso>(this.URI, data);
   }
 
-  update(data: Item, id: number): Observable<Item> {
-    return this.httpClient.put<Item>(this.URI + '/' + data.id, data);
+  update(data: Asso, id: number): Observable<Asso> {
+    return this.httpClient.put<Asso>(this.URI + '/' + data.id, data);
   }
-  updateAvailability(data: Item): Observable<Item> {
-    data.available = !data.available
-    return this.httpClient.put<Item>(this.URI + '/' + data.id, data);
-  }
-
-  delete(id: any): Observable<Item> {
-    return this.httpClient.delete<Item>(this.URI + '/' + id)
+  updateEtat(data: Asso): Observable<Asso> {
+    data.etat = !data.etat
+    return this.httpClient.put<Asso>(this.URI + '/' + data.id, data);
   }
 
-  deleteItem(data: Item): Observable<Item> {
-    return this.httpClient.delete<Item>(this.URI + '/' + data.id)
+  delete(id: any): Observable<Asso> {
+    return this.httpClient.delete<Asso>(this.URI + '/' + id)
+  }
+
+  deleteAsso(data: Asso): Observable<Asso> {
+    return this.httpClient.delete<Asso>(this.URI + '/' + data.id)
   }
 }
