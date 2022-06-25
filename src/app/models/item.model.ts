@@ -4,3 +4,4 @@ export class Asso {
   description?: string
   etat? :boolean
 }
+
