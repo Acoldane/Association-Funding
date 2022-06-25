@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ItemService} from '../services/item.service';
+import {AssoService} from '../services/item.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -12,7 +12,7 @@ export class CreateComponent implements OnInit {
 
   itemForm !: FormGroup;
 
-  constructor(private itemService: ItemService, private formBuilder: FormBuilder, private router: Router) {
+  constructor(private assoService: AssoService, private formBuilder: FormBuilder, private router: Router) {
     this.createFormItem();
   }
 
@@ -20,15 +20,15 @@ export class CreateComponent implements OnInit {
   }
 
   createFormItem() {
-    this.itemForm = this.formBuilder.group({
+    this.assoService = this.formBuilder.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-      available: new FormControl(false),
+      etat: new FormControl(false),
     });
   }
 
   submitItem(): void {
-    this.itemService.create(this.itemForm.value)
+    this.assoService.create(this.itemForm.value)
       .subscribe(res => {
           this.router.navigate(['/items']);
         },
