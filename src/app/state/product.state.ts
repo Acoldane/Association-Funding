@@ -4,22 +4,21 @@ export enum DataStateTypeEnum {
   ERROR
 }
 
-export enum ItemActionType {
-  GET_ALL_ITEMS = '[Items] get all Items',
-  SWITCH_AVAILABILITY = '[Item.available] switch availability of Item',
-  DELETE_ITEM = '[Item] delete the specified Item'
+export enum AssoActionType {
+  GET_ALL_AssoS = '[Assos] get all Assos',
+  SWITCH_ETAT = '[Asso.available] switch etat of Asso',
+  DELETE_Asso = '[Asso] delete the specified Asso'
 }
 
 export interface ActionEvent {
-  actionType?: ItemActionType;
+  actionType?: AssoActionType;
   payload?: any;
 }
 
-export interface ItemState<T> {
+export interface AssoState<T> {
   data?: T,
   state?: DataStateTypeEnum,
   error?: string
 }
-
 
 
