@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {ItemActionType} from '../../state/product.state';
+import {AssoActionType} from '../../state/asso.state';
 import {EventService} from '../../services/event.service';
 
 @Component({
-  selector: 'app-read-bar2',
+  selector: 'app-read-bar',
   templateUrl: './read-bar.component.html',
   styleUrls: ['./read-bar.component.css']
 })
-export class ReadBarComponent2 implements OnInit {
+export class ReadBarComponent implements OnInit {
 
 
   constructor(private eventService: EventService) { }
@@ -15,8 +15,8 @@ export class ReadBarComponent2 implements OnInit {
   ngOnInit(): void {
   }
 
-  getAllItems() {
-    this.eventService.publish({actionType:ItemActionType.GET_ALL_ITEMS})
+  getAllAssos() {
+    this.eventService.publish({actionType:AssoActionType.GET_ALL_ASSOS})
   }
 
 }
