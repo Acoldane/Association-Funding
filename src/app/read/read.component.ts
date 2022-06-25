@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ItemService} from '../services/item.service';
-import {Item} from '../models/item.model';
+import {AssoService} from '../services/asso.service';
+import {Asso} from '../models/asso.model';
 import {Observable, of} from 'rxjs';
-import {ActionEvent, DataStateTypeEnum, ItemActionType, ItemState} from '../state/product.state';
+import {ActionEvent, DataStateTypeEnum, AssoActionType, AssoState} from '../state/asso.state';
 import {catchError, map, startWith} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
 import {EventService} from '../services/event.service';
@@ -15,10 +15,10 @@ import {EventService} from '../services/event.service';
 
 export class ReadComponent implements OnInit {
 
-  items: Item[] | null = null;
-  items$: Observable<ItemState<Item[]>> | null = null;
+  assos: Asso[] | null = null;
+  assos$: Observable<AssoState<Asso[]>> | null = null;
 
-  constructor(private itemService: ItemService, private activatedRoute: ActivatedRoute, private eventService: EventService) {
+  constructor(private assoService: AssoService, private activatedRoute: ActivatedRoute, private eventService: EventService) {
   }
 
 
@@ -29,28 +29,28 @@ export class ReadComponent implements OnInit {
   }
 
 
-  getAllItemsObs() {
-    this.items$ = this.itemService.getAll().pipe(
-      map(item => ({data: item, state: DataStateTypeEnum.SUCCESS})),
+  getAllAssosObs() {
+    this.assos$ = this.AssoService.getAll().pipe(
+      map(asso => ({data: asso, state: DataStateTypeEnum.SUCCESS})),
       startWith({state: DataStateTypeEnum.LOADING}),
       catchError(err => of({state: DataStateTypeEnum.ERROR, error: err.message}))
     );
   }
 
-  switchAvailabilityOfItem(item: Item) {
-    this.itemService.updateAvailability(item)
+  switchEtatOfAsso(Asso: asso) {
+    this.AssoService.updateEtat(asso)
       .subscribe(res => {
-          res.available = item.available;
+          res.etat = asso.etat;
         },
         error => {
           console.log(error);
         });
   }
 
-  deleteItem(item: Item) {
-    this.itemService.deleteItem(item)
+  deleteAsso(asso: Asso) {
+    this.AssoService.deleteAsso(asso)
       .subscribe(res => {
-          this.getAllItemsObs();
+          this.getAllAssosObs();
         },
         error => {
           console.log(error);
@@ -59,14 +59,14 @@ export class ReadComponent implements OnInit {
 
   onActionEvent($event: ActionEvent) {
     switch ($event.actionType) {
-      case ItemActionType.GET_ALL_ITEMS:
-        this.getAllItemsObs();
+      case AssoActionType.GET_ALL_ASSOS:
+        this.getAllAssosObs();
         break;
-      case ItemActionType.SWITCH_AVAILABILITY:
-        this.switchAvailabilityOfItem($event.payload);
+      case AssoActionType.SWITCH_ETAT:
+        this.switchEtatOfAsso($event.payload);
         break;
-      case ItemActionType.DELETE_ITEM:
-        this.deleteItem($event.payload);
+      case AssoActionType.DELETE_ASSO:
+        this.deleteAsso($event.payload);
         break;
     }
   }
