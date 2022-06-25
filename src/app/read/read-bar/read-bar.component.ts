@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ItemActionType} from '../../state/asso.state';
+import {AssoActionType} from '../../state/asso.state';
 import {EventService} from '../../services/event.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class ReadBarComponent implements OnInit {
   }
 
   getAllAssos() {
-    this.eventService.publish({actionType:ItemActionType.GET_ALL_ASSOS})
+    this.eventService.publish({actionType:AssoActionType.GET_ALL_ASSOS})
   }
 
 }
