@@ -20,4 +20,3 @@ export interface AssoState<T> {
   state?: DataStateTypeEnum,
   error?: string
 }
-
