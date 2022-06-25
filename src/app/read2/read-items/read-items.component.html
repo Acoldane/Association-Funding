@@ -1,16 +1,16 @@
-<ng-container *ngIf="items$ | async as result" [ngSwitch]="result.state">
+<ng-container *ngIf="assos$ | async as result" [ngSwitch]="result.state">
   <ng-container *ngSwitchCase="dataStateTypeEnum.LOADING">
-    <h3>Loading Items...</h3>
+    <h3>Loading Assos...</h3>
   </ng-container>
   <ng-container *ngSwitchCase="dataStateTypeEnum.ERROR">
-    <h3>Fetching Items Error!</h3>
+    <h3>Fetching Assos Error!</h3>
   </ng-container>
   <ng-container *ngSwitchCase="dataStateTypeEnum.SUCCESS">
-    <tr *ngFor="let item of result.data" >
-      <ng-container *ngIf="item.available">
-        <th>{{item.id}}</th>
-        <td>{{item.title}}</td>
-        <td>{{item.description}}</td>
+    <tr *ngFor="let asso of result.data" >
+      <ng-container *ngIf="asso.available">
+        <th>{{asso.id}}</th>
+        <td>{{asso.title}}</td>
+        <td>{{asso.description}}</td>
       </ng-container>
     </tr>
   </ng-container>
