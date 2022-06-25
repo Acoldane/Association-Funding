@@ -5,7 +5,7 @@ export enum DataStateTypeEnum {
 }
 
 export enum AssoActionType {
-  GET_ALL_AssoS = '[Assos] get all Assos',
+  GET_ALL_ASSOS = '[Assos] get all Assos',
   SWITCH_ETAT = '[Asso.available] switch etat of Asso',
   DELETE_Asso = '[Asso] delete the specified Asso'
 }
