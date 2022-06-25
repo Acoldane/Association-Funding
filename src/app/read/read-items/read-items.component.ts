@@ -1,18 +1,18 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Item} from '../../models/item.model';
+import {Asso} from '../../models/asso.model';
 import {Observable} from 'rxjs';
-import {ActionEvent, DataStateTypeEnum, ItemActionType, ItemState} from '../../state/product.state';
+import {ActionEvent, DataStateTypeEnum, AssoActionType, AssoState} from '../../state/asso.state';
 import {EventService} from '../../services/event.service';
 
 
 @Component({
-  selector: 'app-read-items',
-  templateUrl: './read-items.component.html',
-  styleUrls: ['./read-items.component.css']
+  selector: 'app-read-assos',
+  templateUrl: './read-assos.component.html',
+  styleUrls: ['./read-assos.component.css']
 })
-export class ReadItemsComponent implements OnInit {
+export class ReadAssosComponent implements OnInit {
 
-  @Input() items$: Observable<ItemState<Item[]>> | null = null;
+  @Input() assos$: Observable<AssoState<Asso[]>> | null = null;
 
   readonly dataStateTypeEnum = DataStateTypeEnum;
 
@@ -22,14 +22,14 @@ export class ReadItemsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateItem(item: Item) {
-    //this.newItemAvailabilityEvent.emit({actionType: ItemActionType.SWITCH_AVAILABILITY, payload: item});
-    this.eventService.publish({actionType: ItemActionType.SWITCH_AVAILABILITY, payload: item});
+  updateAsso(asso: Asso) {
+    //this.newAssoETATEvent.emit({actionType: AssoActionType.SWITCH_ETAT, payload: Asso});
+    this.eventService.publish({actionType: AssoActionType.SWITCH_ETAT, payload: Asso});
   }
 
-  deleteItem(item: Item) {
-    //this.deleteItemEvent.emit({actionType: ItemActionType.DELETE_ITEM, payload: item})
-    this.eventService.publish({actionType: ItemActionType.DELETE_ITEM, payload: item});
+  deleteAsso(asso: Asso) {
+    //this.deleteAssoEvent.emit({actionType: AssoActionType.DELETE_ASSO, payload: asso})
+    this.eventService.publish({actionType: AssoActionType.DELETE_ASSO, payload: asso});
   }
 
 }
