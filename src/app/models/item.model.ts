@@ -1,6 +1,6 @@
-export class Item {
+export class Asso {
   id?: number
   title?: string
   description?: string
-  available? :boolean
+  etat? :boolean
 }
