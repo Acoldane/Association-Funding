@@ -13,7 +13,7 @@ import {EventService} from '../services/event.service';
   styleUrls: ['./read.component.css'],
 })
 
-export class ReadComponent implements OnInit {
+export class ReadComponent2 implements OnInit {
 
   assos: Asso[] | null = null;
   assos$: Observable<AssoState<Asso[]>> | null = null;
@@ -30,15 +30,15 @@ export class ReadComponent implements OnInit {
 
 
   getAllAssosObs() {
-    this.assos$ = this.AssoService.getAll().pipe(
+    this.assos$ = this.assoService.getAll().pipe(
       map(asso => ({data: asso, state: DataStateTypeEnum.SUCCESS})),
       startWith({state: DataStateTypeEnum.LOADING}),
       catchError(err => of({state: DataStateTypeEnum.ERROR, error: err.message}))
     );
   }
 
-  switchEtatOfAsso(Asso: asso) {
-    this.AssoService.updateEtat(asso)
+  switchEtatOfAsso(asso: Asso) {
+    this.assoService.updateEtat(asso)
       .subscribe(res => {
           res.etat = asso.etat;
         },
@@ -48,7 +48,7 @@ export class ReadComponent implements OnInit {
   }
 
   deleteAsso(asso: Asso) {
-    this.AssoService.deleteAsso(asso)
+    this.assoService.deleteAsso(asso)
       .subscribe(res => {
           this.getAllAssosObs();
         },

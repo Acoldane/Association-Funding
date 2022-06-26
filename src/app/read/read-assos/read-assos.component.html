@@ -7,7 +7,7 @@
   </ng-container>
   <ng-container *ngSwitchCase="dataStateTypeEnum.SUCCESS">
     <tr *ngFor="let asso of result.data" >
-      <ng-container *ngIf="!asso.available">
+      <ng-container *ngIf="!asso.etat">
         <th>{{asso.id}}</th>
         <td>{{asso.title}}</td>
         <td>{{asso.description}}</td>

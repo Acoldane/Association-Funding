@@ -6,11 +6,11 @@ import {EventService} from '../../services/event.service';
 
 
 @Component({
-  selector: 'app-read-assos',
+  selector: 'app-read-assos2',
   templateUrl: './read-assos.component.html',
   styleUrls: ['./read-assos.component.css']
 })
-export class ReadAssosComponent implements OnInit {
+export class ReadAssosComponent2 implements OnInit {
 
   @Input() assos$: Observable<AssoState<Asso[]>> | null = null;
 

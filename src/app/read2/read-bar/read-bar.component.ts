@@ -3,11 +3,11 @@ import {AssoActionType} from '../../state/asso.state';
 import {EventService} from '../../services/event.service';
 
 @Component({
-  selector: 'app-read-bar',
+  selector: 'app-read-bar2',
   templateUrl: './read-bar.component.html',
   styleUrls: ['./read-bar.component.css']
 })
-export class ReadBarComponent implements OnInit {
+export class ReadBarComponent2 implements OnInit {
 
 
   constructor(private eventService: EventService) { }
