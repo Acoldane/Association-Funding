@@ -3,6 +3,7 @@ import {Asso} from '../../models/asso.model';
 import {Observable} from 'rxjs';
 import {ActionEvent, DataStateTypeEnum, AssoActionType, AssoState} from '../../state/asso.state';
 import {EventService} from '../../services/event.service';
+import {Route, Router} from "@angular/router";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ReadAssosComponent implements OnInit {
 
   readonly dataStateTypeEnum = DataStateTypeEnum;
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,7 +25,9 @@ export class ReadAssosComponent implements OnInit {
 
   updateAsso(asso: Asso) {
     //this.newAssoETATEvent.emit({actionType: AssoActionType.SWITCH_ETAT, payload: Asso});
-    this.eventService.publish({actionType: AssoActionType.SWITCH_ETAT, payload: Asso});
+    this.eventService.publish({actionType: AssoActionType.SWITCH_ETAT, payload: asso});
+    this.eventService.publish({actionType:AssoActionType.GET_ALL_ASSOS})
+    this.router.navigate(['/associations']);
   }
 
   deleteAsso(asso: Asso) {

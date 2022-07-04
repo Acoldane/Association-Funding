@@ -13,9 +13,10 @@ export class ReadBarComponent2 implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
+    this.getAllEvent();
   }
 
-  getAllAssos() {
+  getAllEvent() {
     this.eventService.publish({actionType:AssoActionType.GET_ALL_ASSOS})
   }
 
