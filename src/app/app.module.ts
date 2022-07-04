@@ -11,6 +11,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReadBarComponent } from './read/read-bar/read-bar.component';
 import { ReadBarComponent2 } from './read2/read-bar/read-bar.component';
+import {CreateComponent} from "./create/create.component";
+import {ReadEventComponent} from "./read3/read-event/read-event.component";
+import {ReadComponent3} from "./read3/read.component";
+import {ReadBarComponent3} from "./read3/read-bar/read-bar.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { ReadBarComponent2 } from './read2/read-bar/read-bar.component';
     NavbarComponent,
     ReadBarComponent,
     ReadBarComponent2,
+    CreateComponent,
+    ReadEventComponent,
+    ReadComponent3,
+    ReadBarComponent3
   ],
   imports: [
     BrowserModule,

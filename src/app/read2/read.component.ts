@@ -8,7 +8,7 @@ import {ActivatedRoute} from '@angular/router';
 import {EventService} from '../services/event.service';
 
 @Component({
-  selector: 'app-read',
+  selector: 'app-read2',
   templateUrl: './read.component.html',
   styleUrls: ['./read.component.css'],
 })

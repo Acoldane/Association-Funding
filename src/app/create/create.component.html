@@ -1,0 +1,20 @@
+<div class="container-md w-25 p-3">
+<form [formGroup]="eventForm" (ngSubmit)="submitItem()">
+    <div class="mb-3">
+      <label class="form-label">Nom d'evenement</label>
+      <input type="text" class="form-control" placeholder="Enter the name" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description d'evenement</label>
+      <input type="text" class="form-control" placeholder="Enter the description" formControlName="description">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">
+        <label class="form-check-label">Date d'evenement</label>
+        <input class="form-control" type="date" formControlName="date">
+      </div>
+    </div>
+    <button [disabled]="!eventForm.valid" type="submit" class="btn btn-success btn-lg">Ajouter evenement</button>
+</form>
+</div>
+
