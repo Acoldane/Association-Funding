@@ -6,15 +6,15 @@ import {EventService} from "../services/event.service";
 import {EvenementService} from "../services/evenement.service";
 
 @Component({
-  selector: 'app-create',
+  selector: 'app-create-assoc',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateAssocComponent implements OnInit {
 
-  eventForm !: FormGroup;
+  assocForm !: FormGroup;
 
-  constructor(private evenementService: EvenementService, private formBuilder: FormBuilder, private router: Router) {
+  constructor(private assocService: AssoService, private formBuilder: FormBuilder, private router: Router) {
     this.createFormEvent();
   }
 
@@ -22,18 +22,17 @@ export class CreateComponent implements OnInit {
   }
 
   createFormEvent() {
-    this.eventForm = this.formBuilder.group({
-      name: new FormControl('', Validators.required),
+    this.assocForm = this.formBuilder.group({
+      title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-      date: new FormControl('', Validators.required),
       etat: new FormControl(false),
     });
   }
 
   submitItem(): void {
-    this.evenementService.create(this.eventForm.value)
+    this.assocService.create(this.assocForm.value)
       .subscribe(res => {
-          this.router.navigate(['/validation']);
+          this.router.navigate(['/demandes']);
         },
         error => {
           console.log(error);
