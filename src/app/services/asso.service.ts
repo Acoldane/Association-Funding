@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class AssoService {
 
-  readonly URI: string = 'http://localhost:3000/Assos';
+  readonly URI: string = 'http://localhost:3000/assos';
 
   constructor(private httpClient: HttpClient) {
   }

@@ -29,7 +29,7 @@ export class ReadEventComponent implements OnInit {
     this.eventService.publish({actionType: AssoActionType.SWITCH_ETAT_EVENT, payload: evenement});
 
     this.eventService.publish({actionType:AssoActionType.GET_ALL_EVENT})
-    this.router.navigate(['/evenements']);
+    this.router.navigate(['/validation']);
   }
 
   deleteEvent(evenement: Evenement) {

@@ -15,6 +15,7 @@ import {CreateComponent} from "./create/create.component";
 import {ReadEventComponent} from "./read3/read-event/read-event.component";
 import {ReadComponent3} from "./read3/read.component";
 import {ReadBarComponent3} from "./read3/read-bar/read-bar.component";
+import {CreateAssocComponent} from './create-assoc/create.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {ReadBarComponent3} from "./read3/read-bar/read-bar.component";
     CreateComponent,
     ReadEventComponent,
     ReadComponent3,
-    ReadBarComponent3
+    ReadBarComponent3,
+    CreateAssocComponent
   ],
   imports: [
     BrowserModule,

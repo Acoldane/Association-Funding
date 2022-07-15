@@ -1,0 +1,14 @@
+<div class="container-md w-25 p-3">
+<form [formGroup]="assocForm" (ngSubmit)="submitItem()">
+    <div class="mb-3">
+      <label class="form-label">Nom de l'association</label>
+      <input type="text" class="form-control" placeholder="Enter the title" formControlName="title">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description de l'association</label>
+      <input type="text" class="form-control" placeholder="Enter the description" formControlName="description">
+    </div>
+    <button [disabled]="!assocForm.valid" type="submit" class="btn btn-success btn-lg">Ajouter Association</button>
+</form>
+</div>
+

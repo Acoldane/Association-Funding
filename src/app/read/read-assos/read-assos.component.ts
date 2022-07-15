@@ -33,6 +33,7 @@ export class ReadAssosComponent implements OnInit {
   deleteAsso(asso: Asso) {
     //this.deleteAssoEvent.emit({actionType: AssoActionType.DELETE_ASSO, payload: asso})
     this.eventService.publish({actionType: AssoActionType.DELETE_ASSO, payload: asso});
+    this.eventService.publish({actionType:AssoActionType.GET_ALL_ASSOS})
   }
 
 }
