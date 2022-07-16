@@ -1,0 +1,17 @@
+<ng-container *ngIf="event$ | async as result" [ngSwitch]="result.state">
+  <ng-container *ngSwitchCase="dataStateTypeEnum.LOADING">
+    <h3>Loading Events...</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateTypeEnum.ERROR">
+    <h3>Fetching Events Error!</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateTypeEnum.SUCCESS">
+    <tr *ngFor="let event of result.data" >
+      <ng-container *ngIf="event.etat">
+        <th>{{event.id}}</th>
+        <td>{{event.name}}</td>
+        <td>{{event.description}}</td>
+      </ng-container>
+    </tr>
+  </ng-container>
+</ng-container>

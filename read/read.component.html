@@ -1,0 +1,19 @@
+<app-read-bar></app-read-bar>
+<div class="container-md w-75 p-3">
+  <table class="table table-hover">
+    <thead align="center">
+    <tr>
+      <th>#</th>
+      <th>Reference</th>
+      <th>Description</th>
+      <th>Options</th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <app-read-assos
+      [assos$]="assos$" style="display: contents">
+    </app-read-assos>
+    </tbody>
+  </table>
+</div>
+
