@@ -1,19 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg bg-gradient" style="background-color: bisque">
   <div class="container-fluid">
     <a class="navbar-brand" href="">
-      <img src="" width="50" height="50" alt="Boosted" loading="lazy">
+      <img src="assets/img/AssoFundingLogo.png" alt="Boosted" loading="lazy" style="width: 8rem; height: 8rem; margin: 0px; padding: 0px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/create-assoc">Creation des associations</a>
-        <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/demandes">demandes</a>
-        <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/associations">liste des aassociations</a>
-        <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/create">Creation des evenements</a>
-        <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/validation">Validation des evenement</a>
+      <div class="navbar-nav" style="font-size: 19px; color: darkblue">
+        <a *ngIf="user?.userType != (userType.ADMIN || userType.USER || userType.ASSOC)" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/create-assoc">Creation des associations</a>
+        <a *ngIf="user?.userType == userType.ADMIN" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/demandes">demandes</a>
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/associations">liste des associations</a>
+        <a *ngIf="user?.userType == userType.ASSOC" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/create">Creation des evenements</a>
+        <a *ngIf="user?.userType == userType.ADMIN" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/validation">Validation des evenement</a>
         <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/evenements">liste des evenements</a>
+        <a class="nav-link" *ngIf="user?.userType != (userType.ADMIN || userType.USER || userType.ASSOC)" style="justify-content: right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/login">Se connecter</a>
+        <a class="nav-link btn btn-light bg-secondary" *ngIf="user?.userType != (userType.ADMIN || userType.USER || userType.ASSOC)" style="justify-content: right; color: bisque" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/signup">Créer un compte</a>
+        <a class="nav-link" *ngIf="user?.userType == (userType.ADMIN || userType.USER || userType.ASSOC)" style="justify-content: right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Se déconnecter</a>
       </div>
     </div>
   </div>

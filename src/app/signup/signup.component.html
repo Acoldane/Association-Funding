@@ -1,0 +1,22 @@
+<div class="container-md w-25 p-3">
+<form [formGroup]="eventForm" (ngSubmit)="submitItem();">
+  <div class="mb-3">
+    <label class="form-label">Nom d'utilisateur</label>
+    <input type="text" class="form-control" placeholder="Enter the username" formControlName="username">
+  </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Enter the email" formControlName="email">
+    </div>
+  <div class="mb-3">
+    <label class="form-label">Numéro du téléphone</label>
+    <input type="tel" class="form-control" placeholder="Enter the phone" formControlName="phone">
+  </div>
+    <div class="mb-3">
+      <label class="form-label">Mot de passe</label>
+      <input type="password" class="form-control" placeholder="Enter the password" formControlName="password">
+    </div>
+    <button [disabled]="!eventForm.valid" type="submit" class="btn btn-success btn-lg">Créer un compte</button>
+</form>
+</div>
+

@@ -6,12 +6,19 @@
     <h3>Fetching Assos Error!</h3>
   </ng-container>
   <ng-container *ngSwitchCase="dataStateTypeEnum.SUCCESS">
-    <tr *ngFor="let asso of result.data" >
+
+    <ng-container *ngFor="let asso of result.data" >
       <ng-container *ngIf="asso.etat">
-        <th>{{asso.id}}</th>
-        <td>{{asso.title}}</td>
-        <td>{{asso.description}}</td>
+        <div class="card" style="width: 23rem;">
+          <img src="assets/img/assoc/{{asso.id}}.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{asso.title}}</h5>
+            <p class="card-text">{{asso.description}}
+            </p>
+            <a routerLink="{{asso.id}}" class="btn btn-primary">Consulter</a>
+          </div>
+        </div>
       </ng-container>
-    </tr>
+    </ng-container>
   </ng-container>
 </ng-container>

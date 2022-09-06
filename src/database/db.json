@@ -4,41 +4,56 @@
       "id": 1,
       "title": "Hanane",
       "description": "hsfdhchfsjdjkvskdfkvlksdf",
-      "etat": true
-    },
-    {
-      "title": "d",
-      "description": "d",
-      "etat": false,
-      "id": 2
+      "etat": false
     },
     {
       "title": "pog",
       "description": "poggers desc",
-      "etat": true,
+      "etat": false,
       "id": 3
+    },
+    {
+      "title": "Association Hanane",
+      "description": "Associations humanitaires, entraide et prévoyance sociale à Tétouan",
+      "etat": true,
+      "phone": "05 39 99 83 83",
+      "address": "rue Bab Sefli Tétouan",
+      "email": "mouad.aber1@gmail.com",
+      "URL": "https://hananeassoc.com",
+      "id": 4
+    }
+  ],
+  "User": [
+    {
+      "id": 1,
+      "username": "",
+      "email": "",
+      "password": ""
     }
   ],
   "Evenement": [
     {
-      "name": "qsfqf",
-      "description": "xxx",
-      "date": "2022-07-14",
+      "name": "Save The Children",
+      "description": "Around the world, too many children start life at a disadvantage simply because of who they are and where they come from. Help us to help them get clothes before the winter comes",
+      "date": "2022-11-14",
       "etat": true,
-      "id": 1
+      "id": 1,
+      "targetAmount": 100000,
+      "accountInfo": "Coordonnées bancaires de La Fondation\n                                                   Banque Populaire Rabat-Kénitra\n                                                              Agence Trabelss \n                                       N° de compte 181 810 21214 5921607 000 1 71\n                                                       Le Code SWIFT : BCPOMAMC\n                                Pour toute demande de convention ou parrainage : \n                        Fondation Lalla Salma Prévention et Traitement des cancers\n                                           Villa N°1, Touarga Fouaka, Méchouar Said\n                                                                  Rabat - Maroc\n                                                    Téléphone +2125 37 66 10 55",
+      "paypalInfo": "lalaSalma"
     },
     {
-      "name": "aa",
-      "description": "aa",
-      "date": "2022-07-05",
+      "name": "ALPAC",
+      "description": "Créée en 1985 à Liège, à l’initiative de l’échevinat de la Culture de la Ville de Liège et de plusieurs intellectuels, artistes et amateurs d’art de la région, l’ALPAC (pour Association liégeoise pour la promotion de l’art contemporain) a, jusqu’à sa disparition en 2020, été étroitement associée à l’existence du musée de La Boverie.",
+      "date": "1985-07-05",
       "etat": false,
       "id": 2
     },
     {
-      "name": "sdf",
-      "description": "dsqfsd",
-      "date": "2022-07-13",
-      "etat": true,
+      "name": "Save The Children",
+      "description": "Around the world, too many children start life at a disadvantage simply because of who they are and where they come from.\n\nMillions of children are dying from preventable causes, face poverty, violence, disease and hunger. They are caught up in war zones and disasters they did nothing to create. And they are denied an education and other basic rights owed to them.\n\nAll children deserve better.",
+      "date": "1922-03-13",
+      "etat": false,
       "id": 3
     },
     {
@@ -49,11 +64,22 @@
       "id": 4
     },
     {
-      "name": "sgsdg",
-      "description": "fsdgs",
-      "date": "2022-07-18",
+      "name": "d",
+      "description": "d",
+      "date": "2022-08-10",
       "etat": false,
-      "id": 5
+      "targetAmount": "d",
+      "accountInfo": "s",
+      "id": 6
+    },
+    {
+      "name": "ws",
+      "description": "sqf",
+      "date": "2022-08-18",
+      "etat": false,
+      "targetAmount": "8585",
+      "accountInfo": "sdfdsf",
+      "id": 7
     }
   ]
 }

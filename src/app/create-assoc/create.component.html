@@ -8,6 +8,22 @@
       <label class="form-label">Description de l'association</label>
       <input type="text" class="form-control" placeholder="Enter the description" formControlName="description">
     </div>
+  <div class="mb-3">
+    <label class="form-label">Email de l'association</label>
+    <input type="text" class="form-control" placeholder="Enter the email" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Numéro du téléphone de l'association</label>
+    <input type="text" class="form-control" placeholder="Enter the description" formControlName="phone">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Adresse de l'association</label>
+    <input type="text" class="form-control" placeholder="Enter the address" formControlName="address">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Site web de l'association</label>
+    <input type="text" class="form-control" placeholder="Enter the website" formControlName="URL">
+  </div>
     <button [disabled]="!assocForm.valid" type="submit" class="btn btn-success btn-lg">Ajouter Association</button>
 </form>
 </div>

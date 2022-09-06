@@ -26,13 +26,17 @@ export class CreateAssocComponent implements OnInit {
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       etat: new FormControl(false),
+      phone: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      URL: new FormControl('', Validators.required),
     });
   }
 
   submitItem(): void {
     this.assocService.create(this.assocForm.value)
       .subscribe(res => {
-          this.router.navigate(['/demandes']);
+          this.router.navigate(['/']);
         },
         error => {
           console.log(error);

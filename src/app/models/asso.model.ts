@@ -3,5 +3,9 @@ export class Asso {
   title?: string
   description?: string
   etat? :boolean
+  phone?: number
+  email?: string
+  URL?: string
+  address?: string
 }
 

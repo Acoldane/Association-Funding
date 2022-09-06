@@ -1,0 +1,55 @@
+<div class="accordion" id="accordionPanelsStayOpenExample" style="width: 75%; margin-left: 13%; margin-top: 1%">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        {{evenement?.name}}
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <strong>Description: {{evenement?.description}}</strong>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Plus d'info:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <strong>Date: {{evenement?.date}}</strong>
+        <br>
+        <br>
+        <p> <strong>Montant désirer: {{evenement?.targetAmount}} MAD</strong></p>
+        <div class="progress " style="width: 69%; margin-left: 17%">
+          <br>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  aria-label="Example with label" style="width: 25%;" aria-valuenow="17308" aria-valuemin="0" aria-valuemax="100000">17308 MAD - 17.31%</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Pour faire une donation:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body"  style="margin-left: 30%">
+        <h3>Les informations du compte bancaire:</h3>
+        <br>
+        <br>
+        <strong style="white-space: pre-line; display: flex; text-align: center">{{evenement?.accountInfo}}</strong>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Montant à donner en dirham</span>
+        <img src="assets/img/PayPalLogo.png" style="width: 50px; height: 50px">
+        <input  [(ngModel)]="this.amount" type="number" class="form-control" placeholder="1000 MAD" aria-label="Montant à donner" aria-describedby="button-addon2" [min]="0">
+        <button class="btn btn-secondary" type="button" id="button-addon2" (click)="donate()">Donate</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

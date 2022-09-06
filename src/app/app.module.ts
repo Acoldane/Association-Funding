@@ -16,6 +16,14 @@ import {ReadEventComponent} from "./read3/read-event/read-event.component";
 import {ReadComponent3} from "./read3/read.component";
 import {ReadBarComponent3} from "./read3/read-bar/read-bar.component";
 import {CreateAssocComponent} from './create-assoc/create.component';
+import {ReadBarEventComponent1} from "./read-event/read-bar/read-bar.component";
+import {ReadEventComponent2} from "./read-event/read-event-item/read-event.component";
+import {ReadEventListComponent} from "./read-event/read.component";
+import {SignUpComponent} from "./signup/signup.component";
+import {LoginComponent} from "./signup/login/login.component";
+import { HomeComponent } from './home/home.component';
+import { AssocDetailsComponent } from './read2/read-assos/assoc-details/assoc-details.component';
+import { EventDetailsComponent } from './read-event/read-event-item/event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +39,15 @@ import {CreateAssocComponent} from './create-assoc/create.component';
     ReadEventComponent,
     ReadComponent3,
     ReadBarComponent3,
-    CreateAssocComponent
+    CreateAssocComponent,
+    ReadBarEventComponent1,
+    ReadEventComponent2,
+    ReadEventListComponent,
+    SignUpComponent,
+    LoginComponent,
+    HomeComponent,
+    AssocDetailsComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,

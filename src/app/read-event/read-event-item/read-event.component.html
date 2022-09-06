@@ -1,0 +1,22 @@
+<ng-container *ngIf="event$ | async as result" [ngSwitch]="result.state">
+  <ng-container *ngSwitchCase="dataStateTypeEnum.LOADING">
+    <h3>Loading Events...</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateTypeEnum.ERROR">
+    <h3>Fetching Events Error!</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateTypeEnum.SUCCESS">
+    <ng-container *ngFor="let event of result.data">
+      <ng-container *ngIf="event.etat">
+        <div class="card mt-3" style="width: 23rem;">
+          <img src="assets/img/event/{{event.id}}.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{event.name}}</h5>
+            <p class="card-text">{{event.description}} - {{event.date}}</p>
+            <a routerLink="{{event.id}}" class="btn btn-primary">Consulter</a>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ng-container>

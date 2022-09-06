@@ -35,10 +35,10 @@ export class AssoService {
   }
 
   delete(id: any): Observable<Asso> {
-    return this.httpClient.delete<Asso>(this.URI + '/' + id)
+    return this.httpClient.delete<Asso>(this.URI + '/' + id);
   }
 
   deleteAsso(data: Asso): Observable<Asso> {
-    return this.httpClient.delete<Asso>(this.URI + '/' + data.id)
+    return this.httpClient.delete<Asso>(this.URI + '/' + data.id);
   }
 }

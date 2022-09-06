@@ -4,4 +4,7 @@ export class Evenement {
   description?: string
   date?: Date
   etat? :boolean
+  targetAmount?: number
+  accountInfo?: string
+  paypalInfo?: string
 }

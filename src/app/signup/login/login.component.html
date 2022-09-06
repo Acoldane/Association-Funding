@@ -1,0 +1,16 @@
+<div class="container-md w-25 p-3">
+<form [formGroup]="eventForm" (ngSubmit)="submitItem();">
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Enter the email" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Mot de passe</label>
+      <input type="password" class="form-control" placeholder="Enter the password" formControlName="password">
+    </div>
+    <button [disabled]="!eventForm.valid" type="submit" class="btn btn-success btn-lg">Se connecter</button>
+</form>
+  <hr>
+  <button routerLink="/signup" class="btn btn-primary btn-lg" style="position: center">Créer un compte</button>
+</div>
+
