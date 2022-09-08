@@ -67,4 +67,9 @@ public class EvenementServiceImpl implements EvenementService {
         Asso asso = assoService.getAssoByTitle(title);
         return evenementRepository.findByAsso(asso);
     }
+
+    @Override
+    public Evenement getEvenementByName(String name) {
+        return evenementRepository.findByName(name);
+    }
 }

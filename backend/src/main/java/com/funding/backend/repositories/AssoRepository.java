@@ -1,6 +1,7 @@
 package com.funding.backend.repositories;
 
 import com.funding.backend.beans.Asso;
+import com.funding.backend.beans.Evenement;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,4 +13,6 @@ public interface AssoRepository extends JpaRepository<Asso, Long> {
 
 
     List<Asso> findByTitle(String title);
+
+    Asso findByEvenementsContaining(Evenement event);
 }

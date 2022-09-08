@@ -1,6 +1,7 @@
 package com.funding.backend.service.impl;
 
 import com.funding.backend.beans.Asso;
+import com.funding.backend.beans.Evenement;
 import com.funding.backend.repositories.AssoRepository;
 import com.funding.backend.service.AssoService;
 import com.funding.backend.service.EmailSenderService;
@@ -84,4 +85,8 @@ public class AssoServiceImpl implements AssoService {
         }
     }
 
+    @Override
+    public Asso getAssoByEvenement(Evenement event) {
+        return assoRepository.findByEvenementsContaining(event);
+    }
 }

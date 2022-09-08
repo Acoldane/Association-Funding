@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface EvenementRepository extends JpaRepository<Evenement, Long> {
     List<Evenement> findByAsso(Asso asso);
+
+    Evenement findByName(String name);
 }

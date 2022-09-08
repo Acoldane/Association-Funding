@@ -30,6 +30,9 @@ public class Evenement implements Serializable {
     @Column(name = "accountInfo")
     private String accountInfo;
 
+    @ManyToOne
+    private Asso asso;
+
     public Long getId() {
         return id;
     }

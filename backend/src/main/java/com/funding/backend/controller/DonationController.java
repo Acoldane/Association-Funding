@@ -30,13 +30,13 @@ public class DonationController {
     }
 
     @GetMapping("/{email}/{asso}")
-    public List<Donation> getAllDonationsForUserAndAsso(@PathVariable("email") String email,
+    public List<Donation> getAllDonationsForUserAndEvent(@PathVariable("email") String email,
                                                  @PathVariable("asso") String title) {
-        return donationService.findDonationByAssoAndUser(email, title);
+        return donationService.findDonationByEventAndUser(email, title);
     }
 
     @GetMapping("/asso/{title}")
-    public List<Donation> getAllDonationsForAsso(@PathVariable("title") String title) {
-        return donationService.findDonationByAssoc(title);
+    public List<Donation> getAllDonationsForEvent(@PathVariable("title") String title) {
+        return donationService.findDonationByEvent(title);
     }
 }

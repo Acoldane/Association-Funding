@@ -2,6 +2,7 @@ package com.funding.backend.service;
 
 import com.funding.backend.beans.Asso;
 import com.funding.backend.beans.Donation;
+import com.funding.backend.beans.Evenement;
 import com.funding.backend.beans.User;
 import com.funding.backend.repositories.DonationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class DonationService {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    EvenementService evenementService;
 
     public Donation findDonation(Long id) {
         return donationRepository
@@ -54,15 +58,15 @@ public class DonationService {
         return donationRepository.findByUser(user);
     }
 
-    public List<Donation> findDonationByAssoc(String title) {
-        Asso assoc = assoService.getAssoByTitle(title);
-        return donationRepository.findByAsso(assoc);
+    public List<Donation> findDonationByEvent(String name) {
+        Evenement event = evenementService.getEvenementByName(name);
+        return donationRepository.findByEvent(event);
     }
 
-    public List<Donation> findDonationByAssoAndUser(String email, String assoName) {
-        Asso asso = assoService.getAssoByTitle(assoName);
+    public List<Donation> findDonationByEventAndUser(String email, String eventName) {
+        Evenement event = evenementService.getEvenementByName(eventName);
         User user = userService.getUserByEmail(email);
 
-        return donationRepository.findByUserAndAsso(user, asso);
+        return donationRepository.findByUserAndEvent(user, event);
     }
 }

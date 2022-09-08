@@ -14,4 +14,6 @@ public interface EvenementService {
     List<Evenement> getAll();
 
     List<Evenement> getEvenementByAsso(String title);
+
+    Evenement getEvenementByName(String name);
 }

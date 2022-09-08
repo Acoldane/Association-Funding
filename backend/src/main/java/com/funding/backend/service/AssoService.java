@@ -1,6 +1,7 @@
 package com.funding.backend.service;
 
 import com.funding.backend.beans.Asso;
+import com.funding.backend.beans.Evenement;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface AssoService {
     List<Asso> getAll();
 
     Asso getAssoByTitle(String assoName);
+
+    Asso getAssoByEvenement(Evenement event);
 }
